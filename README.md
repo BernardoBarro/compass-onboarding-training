@@ -8,3 +8,6 @@ A URL padrão da API é: "http://localhost:8080/produtos"
 
 # Swagger
 É possivel acessar a documentação em Swagger pela URL: "http://localhost:8080/swagger-ui.html#/"
+
+# Testes Unitários
+É possivel realizar os testes unitários pelo repositório de testes no arquivo "ProdutosControllerTest.java"
