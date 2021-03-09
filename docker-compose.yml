@@ -1,0 +1,26 @@
+version: '3'
+services: 
+  docker-app:
+    image: bernardocbarro/produtosapi:latest
+    ports: 
+      - "8080:8080"
+    depends_on: 
+     - docker-postgres
+    environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://docker-postgres:5432/produtos
+    networks: 
+      - docker-network
+  docker-postgres:
+    restart: always
+    image: postgres
+    ports: 
+      - "5432:5432"
+    environment: 
+      - POSTGRES_DB=produtos
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    networks: 
+      - docker-network
+networks: 
+  docker-network:
+    driver: bridge
